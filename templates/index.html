@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Processing App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Document Processing</h1>
+
+    <!-- Upload PDFs -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="files[]" multiple="multiple" accept="application/pdf">
+        <input type="submit" value="Upload">
+    </form>
+
+    <!-- Add Document -->
+    <form action="/add_document" method="post">
+        <input type="submit" value="Add Document">
+    </form>
+
+    <div id="chat-box">
+        <!-- Query -->
+        <form action="/query" method="post" id="query-form">
+            <textarea name="query" id="query-input" placeholder="Enter your query here"></textarea>
+            <button type="submit" id="submit-query">Send</button>
+        </form>
+
+        <!-- Response Area -->
+        <div>
+            <p>Response:</p>
+            <div>{{ response|safe }}</div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,12 @@
+from langchain.vectorstores import FAISS
+from utils import load_documents, save_db, load_openai_embeddings
+
+# embedding_function = load_embeddings()
+embedding_function = load_openai_embeddings()
+documents = load_documents("data/")
+
+db = FAISS.from_documents(documents, embedding_function)
+print("Index Created")
+save_db(db)
+
+print(db.similarity_search("door related info letter and field letter"))

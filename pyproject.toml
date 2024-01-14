@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "langchain-faiss-vectorindex"
+version = "0.1.0"
+description = ""
+authors = ["clarkyeah <clarkyeah@gmail.com>"]
+readme = "README.md"
+packages = [{include = "langchain_faiss_vectorindex"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+langchain = "^0.0.350"
+python-dotenv = "^1.0.0"
+openai = "^1.5.0"
+pypdf = "^3.17.2"
+sentence-transformers = "^2.2.2"
+faiss-cpu = "^1.7.4"
+python-telegram-bot = "^20.7"
+tqdm = "^4.66.1"
+tiktoken = "^0.5.2"
+flask = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
